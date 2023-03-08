@@ -61,6 +61,7 @@ body {
   position:absolute;
   z-index:0;
 }
+
 /*google login*/
 *, *:before, *:after {
   box-sizing: border-box;
@@ -113,17 +114,18 @@ body {
 }
 
 </style>
-
+<title>LOGIN--Sentimental Analyzer</title>
 <?php 
-// if($this->session->flashdata('invalid_user')){
-//  echo '
-// <div class="alert alert-danger alert-dismissible fade show" role="alert">
-//   <strong>Login failed!</strong> Invalid user id or password.
-//   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-//     <span aria-hidden="true">&times;</span>
-//   </button>
-// </div>';
-// }
+if($this->session->flashdata('invalid_user'))
+{
+    echo '
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Login failed!</strong> Invalid user id or password.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+}
 // if($this->session->flashdata('mailsend')){
 //   echo '
 //  <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -157,7 +159,8 @@ body {
 <?php echo form_open('Home/login_process','class="form-signin text-center"'); ?>
 <div class="mt-4">
       <img class="mb-4" src="<?php echo base_url();?>assets/image/login_logo.png" alt="" width="90" height="94" />
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In</h1>
+      <h1 class="h3 mb-3 font-weight-bold">SIGN-IN HERE</h1>
+      
       <label for="inputEmail" class="sr-only">Email Address</label>
       <input type="email" name="u_email" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
@@ -180,8 +183,6 @@ body {
             </span>
           </div>  
         </a>
-
-
       </div>
     </div>
      
